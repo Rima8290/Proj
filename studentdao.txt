@@ -1,0 +1,126 @@
+package com.lti.Day_7;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class StudentDao {
+	
+	 public void add(Student student){
+	 Connection conn = null;
+	 PreparedStatement stmt = null;
+	 
+	   try {
+		   Class.forName("oracle.jdbc.driver.OracleDriver");
+		   String url = "jdbc:oracle:thin:@localhost:1521:XE";
+		   String user = "hr";
+		   String password = "hr";
+		   conn = DriverManager.getConnection(url,user,password);
+		   System.out.println("the database is connected successfully");
+		   String sql = "insert into  Result values(?,?,?,?,?)";
+		   stmt = conn.prepareStatement(sql);
+		   
+		   stmt.setInt(1,student .getRollno());
+		   stmt.setString(2,student .getFname());
+		   stmt.setString(3,student .getLname());
+		   stmt.setString(4, student.getCourse());
+		   stmt.setString(5, student.getResult());
+		   stmt.executeUpdate(); 
+	   }
+	   catch(ClassNotFoundException e) {
+		     System.out.println("The driver is not found.....");
+		     
+	   }
+	   catch(SQLException e) {
+		   e.printStackTrace( );
+	   }
+	   finally {
+		        try {  conn.close( );}  
+		        catch(Exception e)  {    }
+	   }
+	 }
+
+
+   
+//fetch data
+
+public List<Student> fetchAll() {
+	   Connection conn = null; 
+	   PreparedStatement stmt = null; 
+	   ResultSet rs = null;
+	   
+	   
+	   try {
+		   Class.forName("oracle.jdbc.driver.OracleDriver");
+		   String url = "jdbc:oracle:thin:@localhost:1521:XE";
+		   String user = "hr";
+		   String pass = "hr";
+		   conn = DriverManager.getConnection(url,user,pass);
+		  
+		   String sql = "select * from Result where rollno >= ?";
+		   stmt = conn.prepareStatement(sql);
+		   
+		   stmt.setInt(23, 0);
+		   rs = stmt.executeQuery();		   
+		   
+		   List<Student> students = new ArrayList<Student>();
+		   while(rs.next()) {
+			   Student s = new Student();
+			    s.setRollno(rs.getInt(1));
+			    s.setFname(rs.getString(2));
+			    s.setLname(rs.getString(3));
+			    s.setCourse(rs.getString(4));
+			    s.setResult(rs.getString(5));
+			    students.add(s);
+		   }
+		   return students;
+	   }
+	   catch(ClassNotFoundException e) {
+		     System.out.println("JDBC driver not found");
+		     
+	   }
+	   catch(SQLException e) {
+		   e.printStackTrace( );
+	   }
+	   finally {
+		        try {  conn.close( );}   catch(Exception e)  {    }
+	   }
+	   return null;
+	   }
+
+	   
+
+
+
+//delete data
+
+Connection conn = null; 
+PreparedStatement stmt = null;{ 
+
+try{
+	
+	   Class.forName("oracle.jdbc.driver.OracleDriver");
+	   String url = "jdbc:oracle:thin:@localhost:1521:XE";
+	   String user = "hr";
+	   String pass = "hr";
+	   conn = DriverManager.getConnection(url,user,pass);
+       String sql = "delete from Result where rollno = 23";
+       stmt = conn.prepareStatement(sql);
+       stmt.executeUpdate();
+}
+catch(ClassNotFoundException e2) {
+    System.out.println("JDBC driver not found");
+    
+}
+catch(SQLException e) {
+  e.printStackTrace( );
+}
+finally {
+       try {  conn.close( );}   catch(Exception e)  {    }
+}
+} 
+}
