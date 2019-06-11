@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    
+    <title>Progress Tag</title>
+    
+</head>
+<progress id="element" value="50" max="100"></progress>
+<body>
+        <p>Download Status of a File:</p> 
+  
+       
+        <button onclick="update()">Start Download</button>  
+          
+        <script> 
+        function update() { 
+          var element = document.getElementById("element");    
+          var width = 1; 
+          var identity = setInterval(scene, 5); 
+          function scene() { 
+            if (width >= 100) { 
+              clearInterval(identity); 
+            } else { 
+              width++;  
+              element.style.width = width + '%';  
+            } 
+          } 
+        } 
+        </script> 
+    
+</body>
+</html>

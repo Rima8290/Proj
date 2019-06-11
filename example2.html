@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+        <img src="https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiV95LQo-HiAhXi7XMBHTAyDicQjRx6BAgBEAU&url=https%3A%2F%2Fcash2kart.com%2Fcoupons-rewards&psig=AOvVaw0w1LqWI0kUhhS8evq5dndU&ust=1560337319928858" alt="Girl in a jacket" style="width:500px;height:600px;">
+    <title>FORM</title>
+    
+    <script > 
+    function results(){
+           var name= document.getElementById('name').value;
+           
+           var doj= document.getElementById('doj').value;
+           //alert("doj is:"+doj);
+
+           var email= document.getElementById('email').value;
+           //alert("email is:"+email);
+
+           var number= document.getElementById('number').value;
+
+           window.alert(name+"\n"+doj+"\n"+email+"\n"+number);
+
+    }
+    </script>
+</head>
+<body>
+    <form onsubmit="results()">
+   Name:  <input id="name" type="text" placeholder="your name" required /> <br/> <br/> <!--Text Feild -->
+   Date Of Joining:  <input id="doj" type="date" /> <BR/> <br/>
+   Email Address: <input id="email" type="email" placeholder="your email"/> <br/> <br/>
+   Mobile Number: <input id="number" type="tel" placeholder="your number"/> <br/> <br/>
+   <button type="submit"> Submit</button>
+</form >
+
+</body>
+</html>

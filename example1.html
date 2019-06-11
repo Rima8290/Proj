@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <title>RIMA'S WEBSITE</title>
+   
+</head>
+<body>
+        <div id="Progress_Status"> 
+                <div id="myBar"></div> 
+              </div> 
+              <br> 
+<button onclick="update()">Start Download</button>  
+  
+ <h1>
+    THIS IS OUR FIRST PAGE!!!!!!!!!            
+</h1>
+
+<script> 
+        function update() { 
+          var element = document.getElementById("myBar");    
+          var width = 1; 
+          var identity = setInterval(scene, 10); 
+          function scene() { 
+            if (width >= 100) { 
+              clearInterval(identity); 
+            } else { 
+              width++;  
+              element.style.width = width + '%';  
+            } 
+          } 
+        } 
+        </script> 
+</body>
+</html>
