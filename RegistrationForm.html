@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <style>
+    #div1 {
+       border-style : solid;
+       border-width:01px;
+       
+
+
+    }
+    form{
+      border-style : solid;
+      border-width : 02px;
+      border-color : rgb(126, 39, 39);
+      align:"center";    
+    }
+    body{
+        align-items: center;
+    }
+
+    label {
+        align-content: center;
+    }
+    </style>
+</head>
+<body>
+    <div width="40%" id="div1">
+        
+    <form id="registratio_form" name="register" method="post" >
+<h1>Create Account</h1>
+      <div> <label><b>Customer Name</b><br></label>
+        <input type="text" id="CustomeReg" autocomplete="off" name="CustomerName" required>
+    </div> 
+    <div> <label><b>Email</b><br></label>
+        <input type="email" id="email" autocomplete="off" name="Email" required>
+    </div>
+    <div> <label><b>Password</b><br></label>
+        <input type="password" id="pass" autocomplete="off" name="Pass" placeholder = "at least 8 character"required>
+    </div>
+    <div> <label><b>Re-enter password</b><br></label>
+        <input type="password" id="repass" autocomplete="off" name="RePass" placeholder = "at least 8 character"required>
+    </div>
+    <button type="submit" onclick="checkPass" id="passverify">Register</button>
+
+
+
+
+    </form>
+</div>
+<script>
+    var pass1 = document.getElementById("pass").value;
+    var pass2=document.getElementById("repass").value;
+    if(pass1!=pass2)
+    alert("Password Not Matched !!!")
+
+</script>
+</body>
+</html>

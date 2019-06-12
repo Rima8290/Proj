@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+
+    <title>FORM</title>
+
+    <style>
+      #name1{
+         color: red;
+      }
+
+    
+    </style>
+   
+</head>
+
+<body>
+    <form >
+        Name:
+        <input id="name" type="text" placeholder="your name" />
+        <p id="name1"></p>
+    
+        <br/> Date Of Joining:
+        <input id="doj" type="date" />
+        <br/>
+        <br/> Email Address:
+        <input id="email" type="email" placeholder="your email" />
+        <br/>
+        <br/> Mobile Number:
+        <input id="number" type="tel" placeholder="your number" />
+        <p id="number1"></p>
+        <br/>
+        <br/>
+        <p id="id2"></p>
+        <button type="button" onclick="validation()"> Submit</button>
+    </form>
+    <script> 
+
+        function validation() {
+            var val = document.getElementById("name").value;
+            if (val.length < 3) {
+                document.getElementById("name1").innerHTML = "Enter a valid name";
+            } else {
+                document.getElementById("name1").innerHTML = null;
+            }
+
+            var val2 = document.getElementById("number").value;
+
+
+            if (val2.length>10||val2.length<10){ // == is comparison... = is assignment
+                    document.getElementById('number1').innerHTML = "Please enter valid no.";
+                    }
+                   
+           else{
+            document.getElementById("number1").innerHTML = null;
+                }
+        }
+    </script>
+
+</body>
+
+</html>

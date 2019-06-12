@@ -1,0 +1,44 @@
+label{
+    display: block;
+    padding-top:5px;
+    padding-bottom: 5px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+}
+#regform{
+    display : block;
+    border-radius : 5px;
+    border: 1px grey solid;
+    background-color:#fff;
+    width:350px;
+    margin: auto;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 70px;
+  padding-left: 80px;
+  
+}
+input{
+    padding-bottom:10px;
+    outline-color: chocolate;
+    width:320px;
+    border-radius : 5px;
+    
+}
+
+button{
+    margin: 0;
+    font-size: 100%;
+    vertical-align: middle;
+    padding-top:5px; 
+    padding-bottom:5px;
+    background-color: rgba(206, 106, 12, 0.774);
+    width: 325px;
+
+    
+}
+select{
+    padding-bottom:10px;
+    border-radius : 5px;
+}
+
