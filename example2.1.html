@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Page Title</title>
+    <script src="jquery-3.4.1.js"></script>
+    <script>
+        $(function(){
+          //understanding DOM traversal
+          // this time using JQuery traversal API
+          //$("#products").find("li").css("color","red");
+          $("#products").children("ul").css("color","blue");
+          $("#products").children("li").css("color","red");
+          $("#services").children("li").first().css("color","orange");
+          $("#services").children("li").last().css("color","pink");
+          $("li").last().prev().css("color","purple");
+          $("li").last().hide();
+          $("li").last().show();
+
+
+
+        })
+    
+    
+    </script>
+    
+</head>
+<body>
+    <ul id="products">
+        <li>Laptop</li>
+        <li>Mobile</li>
+        <ul>
+            <li>Sony</li>
+            <li>Apple</li>
+        </ul>
+        <li>Headphones</li>
+    </ul>
+
+    <ul id="services">
+        <li>Email</li>
+        <li>Chat</li>
+        <li>SMS</li>
+    </ul>
+    
+</body>
+</html>

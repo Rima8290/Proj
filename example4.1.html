@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    ul{
+       list-style: none; 
+       
+    }
+         
+
+    li{
+        display:inline-block;
+        margin-right:10px;
+        
+            }      
+    </style>
+    <title>jQuery</title>
+    
+    <script src="jquery-3.4.1.js"></script>
+    <script>
+        $(function(){
+            $("button").click(function() {
+                var para= $("<p/>")
+                          .text()
+                          .attr("style","color:red");
+               // $(".product").find("p").remove(); 
+                $(this).closest(".product").find("p").remove(); 
+                $(this).after(para);    
+
+            })
+           
+
+        })
+    </script>
+</head>
+<body>
+    <ul>
+        <div >
+         <li data-price="4500"class="product">
+            <h2>Nokia 6600</h2>
+            <button>GET PRICE</button>
+            
+        </li>
+        <li  data-price="4000"class="product">
+            <h2>Samsung S10</h2>
+            <button>GET PRICE</button>
+                
+            </li>
+        <li data-price="5500"class="product">
+            <h2>NIphone Sx</h2>
+            <button>GET PRICE</button>
+                    
+            </li>
+                   
+    </div>
+    </ul>
+</body>
+</html>

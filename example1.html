@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <title>JQuery</title>
+    <!--<script src="https://code.jquery.com/jquery-3.4.1.js"></script>-->
+    <script src="jquery-3.4.1.js"></script>
+    
+    <script>
+        //logically similiar to main function in Java
+        jQuery(function(){
+            console.log($);
+            console.log(jQuery);
+            $("h1").css("color","red");
+
+        })
+    </script>
+    
 </head>
 <body>
-    <h1>Welcome to Html5</h1>
-    <progress value = "01" max="100" id="move"></progress>
-    <script> 
-         var t = setInterval(displayprogress,500);
-         function displayprogress(){
-             var move= document.getElementById("move");
-             move.value += 1;
-             if(move.value >= 100)
-             clearInterval(t); 
-         }
-       </script> 
+    <h1>Checking if jQuery is loaded or not</h1>
 </body>
 </html>
