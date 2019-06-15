@@ -1,0 +1,14 @@
+<button (click)="generatelist()"  style="cursor: pointer"> Click Here </button>
+
+
+<div class="p1">
+    <p *ngFor="let p of products">
+        <img src="assets/{{p.imageUrl}}" /> ID : {{p.id}}
+        <br/> Name : {{p.name}}
+        <br/> Price : {{p.price}}
+        <br/> Quantity : {{p.quantity}}
+        <br/>
+
+    </p>
+
+</div>
