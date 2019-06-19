@@ -1,6 +1,8 @@
-package com.lti.user;
+package com.lti.register;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,11 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/RegisterServlet")
+@WebServlet("/RegisterServlet.com")
 public class RegisterServlet extends HttpServlet {
 	
-    public RegisterServlet() {
-          }
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -22,19 +22,15 @@ public class RegisterServlet extends HttpServlet {
 		  String city = request.getParameter("city");
 		  String password = request.getParameter("password");
 		  //-----------To Insert
-		  Register rg = new Register();
-			DatabaseRegister dbmgr= new DatabaseRegister();
-			   dbmgr.insert(rg);
-			 
-		  
-		  /*
- //-----------To Display
-	DatabaseRegister dbmgr= new DatabaseRegister();
-	  boolean display = dbmgr.display();
-	 
+		  Register rg = new Register(name,email,city,password);
+			DaoRegister dr= new DaoRegister();
+	
+			dr.insert(rg);
 			
-		  } */
+			
+			
+		}
 
-
-}
-}
+	}
+			 
+	
