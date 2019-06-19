@@ -1,0 +1,74 @@
+package com.lti.model;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.lti.exception.DataAccessException;
+
+public class ProductDao {
+	
+	public List<Product>  fetchProducts(int from, int to) throws DataAccessException {
+		 
+	 
+		   Connection conn = null; //manage the conn between the app and the db
+		   PreparedStatement stmt = null; // helps to execute the sql stmts
+		   ResultSet rs = null;//helps us to fetch the result of a select query
+		   
+		   
+		   
+		   try {
+			   Class.forName("oracle.jdbc.driver.OracleDriver");
+			   String url = "jdbc:oracle:thin:@localhost:1521:XE";
+			   String user = "hr";
+			   String pass = "hr";
+			   conn = DriverManager.getConnection(url,user,pass);
+			  // System.out.println("Connected succesfully..........");
+String sql = "select id,name,price,quantity " + 
+		"from( " + 
+		"  select" + 
+		"    t.*," + 
+		"    row_number() over (order by ID) r" + 
+		"  from" + 
+		"   tbl_product t" + 
+		")" + 
+		" where " + 
+		"  r between ? and ?" ;
+			   stmt = conn.prepareStatement(sql);
+			   stmt.setInt(1,from);
+			   stmt.setInt(2, to);
+			   rs = stmt.executeQuery();		   
+			   
+			   List<Product> products = new ArrayList<Product>();
+			   while(rs.next()) {
+				    Product p = new Product();
+				    p.setId(rs.getInt(1));
+				    p.setName(rs.getString(2));
+				    p.setPrice(rs.getDouble(3));
+				    p.setQuantity(rs.getInt(4));
+				    products.add(p);
+			   }
+			   return products;
+		   }
+		   catch(ClassNotFoundException e) {
+			   throw new DataAccessException("unable to load the jdbc driver");
+			    
+			     
+		   }
+		   catch(SQLException e) {
+			   throw new DataAccessException("Problem while fetching products from DB",e);
+			    
+		   }
+		   finally {
+			        try {  conn.close( );}   catch(Exception e)  {    }
+		   }
+		   }
+	
+		
+	}
+
+
