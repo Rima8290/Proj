@@ -1,0 +1,17 @@
+<h1>
+    Check the status of your ticket here!!!!
+</h1>
+<form (ngSubmit)="checkStatus()">
+    Enter PNR No:
+    <input type="number" [(ngModel)]=pnrNo name="pnrNo" />
+    <button type="submit">Check Status</button> 
+</form> <br/>
+<div *ngIf="pnr">
+    Train Number : {{pnr.trainNo}} <br/>
+    Date Of Journey : {{pnr.date}} <br/>
+    Status : {{pnr.status}} 
+
+
+
+
+</div>
