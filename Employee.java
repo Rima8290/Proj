@@ -1,73 +1,40 @@
-package com.lti.assignment;
+package com.lti.minor.project2;
 
 public class Employee {
-
-	private int empno;
-	private String ename;
-	private String job;
-	private int mgr;
-	private String hiredate;
-	private int sal;
-	private int comm;
-	private int deptno;
-	
-	/*public Employee(int empno, String ename, String job, int mgr, String hiredate, int sal, int comm, int deptno) {
-		super();
-		this.empno = empno;
-		this.ename = ename;
-		this.job = job;
-		this.mgr = mgr;
-		this.hiredate = hiredate;
-		this.sal = sal;
-		this.comm = comm;
-		this.deptno = deptno;
-	}*/
-	public int getEmpno() {
-		return empno;
+	private int eid;
+	private String fname;
+	private String lname;
+	private String doj;
+	private  String dept;
+	public int getEid() {
+		return eid;
 	}
-	public void setEmpno(int empno) {
-		this.empno = empno;
+	public void setEid(int eid) {
+		this.eid = eid;
 	}
-	public String getEname() {
-		return ename;
+	public String getFname() {
+		return fname;
 	}
-	public void setEname(String ename) {
-		this.ename = ename;
+	public void setFname(String fname) {
+		this.fname = fname;
 	}
-	public String getJob() {
-		return job;
+	public String getLname() {
+		return lname;
 	}
-	public void setJob(String job) {
-		this.job = job;
+	public void setLname(String lname) {
+		this.lname = lname;
 	}
-	public int getMgr() {
-		return mgr;
+	public String getDoj() {
+		return doj;
 	}
-	public void setMgr(int mgr) {
-		this.mgr = mgr;
+	public void setDoj(String doj) {
+		this.doj = doj;
 	}
-	public String getHiredate() {
-		return hiredate;
+	public String getDept() {
+		return dept;
 	}
-	public void setHiredate(String hiredate) {
-		this.hiredate = hiredate;
-	}
-	public int getSal() {
-		return sal;
-	}
-	public void setSal(int sal) {
-		this.sal = sal;
-	}
-	public int getComm() {
-		return comm;
-	}
-	public void setComm(int comm) {
-		this.comm = comm;
-	}
-	public int getDeptno() {
-		return deptno;
-	}
-	public void setDeptno(int deptno) {
-		this.deptno = deptno;
+	public void setDept(String dept) {
+		this.dept = dept;
 	}
 }
+

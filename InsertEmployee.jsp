@@ -1,4 +1,3 @@
-
 <%@page import="com.lti.minor.project2.Employee"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -6,11 +5,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Employee Details</title>
+<title>Insert New Employee</title>
 </head>
 <body>
 <%
- Employee emp = (Employee)session.getAttribute("currentEmps");
+ Employee emp = (Employee)session.getAttribute("insertEmps");
 %>
     Eid : <%= emp.getEid() %><br/>
 	Fname : <%= emp.getFname() %><br/>

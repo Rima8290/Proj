@@ -1,14 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<title>Assigment</title>
+<meta charset="ISO-8859-1">
+<title>Employee Details</title>
 </head>
-<body>
-<form method="post"  action="EmployeeServlet" >
-Enter Empno:<input type="text" name="empno"><br/>
-<button type="submit" name="Register">Search</button>
+<body style="margin-left:30%">
+<div id="display"  style="margin-top:5%">
+<form method="post"  action="EmployeeServlet">
+Enter Eid:<input type="text" name="empId"><br/>
+<button type="submit" name="search">Search</button>
 </form>
-</body>
+</div>
+<br/>
+<br/>
+<div id="insert">
+
+<form method="post"  action="EmployeeServletInsert" >
+<label  style="display: table-cell;">Enter Eid:</label>
+<input   style="display: table-cell;" type="text" name="empId"><br/>
+
+<label  style="display: table-cell;">Enter Fname:</label>
+<input  style="display: table-cell;" type="text" name="fname"><br/>
+
+<label  style="display: table-cell;">Enter Lname:</label>
+<input  style="display: table-cell;" type="text" name="lname"><br/>
+
+<label  style="display: table-cell;">Enter Doj:</label>
+<input  style="display: table-cell;" type="text" name="doj"><br/>
+
+<label  style="display: table-cell;">Enter Department:</label>
+<input  style="display: table-cell;" type="text" name="dept"><br/>
+<br/>
+
+<button type="submit" name="insert">Insert</button>
+</form>
+
+</div>
+<br/>
+<br/>
+
+<div id="delete">
+<form method="post"  action="EmployeeServletDelete" >
+Enter Eid:<input  type="text" name="empId"><br/>
+<button type="submit" name="delete">Delete</button>
+</form>
+</div>
+<br/>
+<br/>
+
+<div id="update">
+<form method="post"  action="EmployeeServletUpdate" >
+Enter Eid:<input type="text" name="empId"><br/>
+<button type="submit" name="update">Update</button>
+</form>
+</div>
 </body>
 </html>
