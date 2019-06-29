@@ -1,0 +1,115 @@
+1.	forName() :
+
+o	It is used to load the class dynamically.
+o	It returns the instance of Class .
+o	It should be used if you know the fully qualified name of class. This cannot be used for primitive types.
+
+package reflection;
+import java.lang.*;
+public class ReflectionApi {
+
+  
+	  
+	   public static void main(String[] args) {  
+	      try {  
+	         Class classlldr = Class.forName("java.lang.ClassLoader");  //lang class loader is passed as parameter  
+	         System.out.println("Name of Class  = " + classlldr.getName());  //get the name of class  
+	         System.out.println("Package Name  = " + classlldr.getPackage());//get the name of class  
+	         System.out.println("Interface Name  = " + classlldr.getInterfaces());  //get the name of class  
+	      } catch(ClassNotFoundException ex) {  
+	         System.out.println(ex.toString()); //print  exception object  
+	      }  
+	   }  
+	}  
+
+Output-
+Name of Class  = java.lang.ClassLoader
+Package Name  = package java.lang, Java Platform API Specification, version 1.8
+Interface Name  = [Ljava.lang.Class;@7852e922
+
+2.	getClass() :
+
+It returns the instance of Class class. It should be used if you know the type. Moreover, it can be used with primitives.
+
+
+package reflection;
+
+public class Exampl2 {
+
+	  
+	    public static void main(String[] args)   
+	    {   
+	        Object obj = new String("JavaReflection");   
+	        Class a = obj.getClass();   
+	        System.out.println("Class of Object obj is : " + a.getName());   
+	    }   
+	  
+}
+
+
+Output-
+Class of Object obj is : java.lang.String
+
+
+3) isInterface() :
+
+ Determines if the specified Class object represents an interface type.
+
+public class Main {
+
+	   public static void main(String[] args) {
+
+	     Main c = new Main();
+	     Class cls = c.getClass(); // determines if the specified Class object represents an interface type
+	     boolean retval = cls.isInterface();
+	     System.out.println("It is an interface ? " + retval);       
+	   }
+	}
+
+Output:
+It is an interface? false
+
+
+
+
+4) isArray() :
+
+
+
+
+
+
+
+
+
+5) isPrimitive() :
+
+
+
+
+
+
+
+6) newInstance():
+The newInstance() method of Class class and Constructor class is used to create a new instance of the class.
+The newInstance() method of Class class can invoke zero-argument constructor      whereas newInstance() method of Constructor class can invoke any number of arguments. So Constructor class is preferred over Class class.
+Example:
+class Simple{  
+ void message(){System.out.println("Hello Java");}  
+}  
+  
+class Test{  
+ public static void main(String args[]){  
+  try{  
+  Class c=Class.forName("Simple");  
+  Simple s=(Simple)c.newInstance();  
+  s.message();  
+  
+  }catch(Exception e){System.out.println(e);}  
+  
+ }  
+} 
+ 
+Output:
+Hello java
+
